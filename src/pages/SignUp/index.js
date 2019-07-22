@@ -29,7 +29,7 @@ export default function SignUp({ navigation }) {
   const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit() {
-    dispatch(signUpRequest(name, email, password))
+    dispatch(signUpRequest(name, email, password));
   }
 
   return (
@@ -73,10 +73,13 @@ export default function SignUp({ navigation }) {
             onChangeText={setPassword}
           />
 
-          <SubmitButton  onPress={handleSubmit}>Criar conta</SubmitButton>
+          <SubmitButton onPress={handleSubmit}>Criar conta</SubmitButton>
         </Form>
 
-        <SignLink loading={loading} onPress={() => navigation.navigate('SignIn')}>
+        <SignLink
+          loading={loading}
+          onPress={() => navigation.navigate('SignIn')}
+        >
           <SignLinkText>Já tenho conta</SignLinkText>
         </SignLink>
       </Container>
